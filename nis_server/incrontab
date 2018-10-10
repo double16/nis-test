@@ -1,0 +1,2 @@
+/etc/passwd IN_CLOSE_WRITE withlock -w 5 /var/run/lock/yp.make make -C /var/yp
+/etc/group IN_CLOSE_WRITE withlock -w 5 /var/run/lock/yp.make make -C /var/yp

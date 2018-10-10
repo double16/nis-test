@@ -1,0 +1,22 @@
+version: '3.7'
+
+networks:
+  nis_test:
+
+services:
+  nis_server:
+    build: nis_server
+    privileged: true
+    hostname: nis_server
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    networks: 
+      - nis_test
+
+  nis_client:
+    build: nis_client
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    networks: 
+      - nis_test
